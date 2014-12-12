@@ -1,7 +1,7 @@
 {
   "name": "array-last",
   "description": "Get the last or last n elements in an array.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/jonschlinkert/array-last",
   "author": {
     "name": "Jon Schlinkert",
@@ -35,12 +35,16 @@
     "is-number": "^0.1.1"
   },
   "keywords": [
-    "docs",
-    "documentation",
-    "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
+    "array",
+    "fast",
+    "first",
+    "initial",
+    "javascript",
+    "js",
+    "last",
+    "rest",
+    "util",
+    "utility",
+    "utils"
   ]
 }
