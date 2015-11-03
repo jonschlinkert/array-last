@@ -1,13 +1,11 @@
 {
   "name": "array-last",
   "description": "Get the last or last n elements in an array.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "homepage": "https://github.com/jonschlinkert/array-last",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/array-last",
-  "bugs": {
-    "url": "https://github.com/jonschlinkert/array-last/issues"
-  },
+  "bugs": "https://github.com/jonschlinkert/array-last/issues",
   "license": "MIT",
   "files": [
     "index.js"
@@ -20,12 +18,14 @@
     "test": "mocha"
   },
   "dependencies": {
-    "array-slice": "^0.2.2",
     "is-number": "^0.1.1"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "ansi-bold": "^0.1.1",
+    "array-slice": "^0.2.3",
+    "benchmarked": "^0.1.4",
+    "matched": "^0.3.2",
+    "mocha": "*"
   },
   "keywords": [
     "array",
@@ -42,8 +42,12 @@
   ],
   "verb": {
     "related": {
-      "description": "",
-      "list": []
+      "list": [
+        "arr-union",
+        "array-unique",
+        "array-xor"
+      ],
+      "description": ""
     }
   }
 }
