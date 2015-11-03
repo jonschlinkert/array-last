@@ -6,20 +6,25 @@
  */
 
 var isNumber = require('is-number');
-var slice = require('array-slice');
 
-module.exports = function last(arr, num) {
+module.exports = function last(arr, n) {
   if (!Array.isArray(arr)) {
-    throw new Error('array-last expects an array as the first argument.');
+    throw new Error('expected the first argument to be an array');
   }
 
-  if (arr.length === 0) {
+  var len = arr.length;
+  if (len === 0) {
     return null;
   }
 
-  var res = slice(arr, arr.length - (isNumber(num) ? +num : 1));
-  if (+num === 1 || num == null) {
-    return res[0];
+  n = isNumber(n) ? +n : 1;
+  if (n === 1 && len === 1) {
+    return arr[0];
+  }
+
+  var res = new Array(n);
+  while (n--) {
+    res[n] = arr[--len];
   }
   return res;
 };
