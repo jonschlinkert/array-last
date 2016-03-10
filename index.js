@@ -18,8 +18,8 @@ module.exports = function last(arr, n) {
   }
 
   n = isNumber(n) ? +n : 1;
-  if (n === 1 && len === 1) {
-    return arr[0];
+  if (n === 1) {
+    return arr[len - 1];
   }
 
   var res = new Array(n);

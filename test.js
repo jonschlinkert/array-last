@@ -25,8 +25,8 @@ describe('last', function () {
   });
 
   it('should return the last element in the array:', function () {
-    assert.equal(last(['a', 'b', 'c', 'd', 'e', 'f']), 'f');
-    assert.equal(last(['a', 'b', 'c', 'd', 'e', 'f'], 1), 'f');
+    assert.strictEqual(last(['a', 'b', 'c', 'd', 'e', 'f']), 'f');
+    assert.strictEqual(last(['a', 'b', 'c', 'd', 'e', 'f'], 1), 'f');
   });
 
   it('should the last n elements of the array:', function () {
