@@ -20,7 +20,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-number": "^0.1.1"
+    "is-number": "^3.0.0"
   },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
