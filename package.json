@@ -20,15 +20,15 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-number": "^0.1.1"
+    "is-number": "^3.0.0"
   },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
-    "array-slice": "^0.2.3",
-    "benchmarked": "^0.1.4",
-    "gulp-format-md": "^0.1.7",
-    "matched": "^0.3.2",
-    "mocha": "*"
+    "array-slice": "^1.0.0",
+    "benchmarked": "^1.1.1",
+    "gulp-format-md": "^1.0.0",
+    "matched": "^1.0.2",
+    "mocha": "^3.5.0"
   },
   "keywords": [
     "array",
