@@ -12,9 +12,33 @@ var assert = require('assert');
 var last = require('./');
 
 describe('last', function() {
-  it('should throw an error if invalid args are passed:', function(cb) {
+  it('should throw an error if no are passed:', function(cb) {
     try {
       last();
+      cb(new Error('expected an error'));
+    } catch (err) {
+      assert(err);
+      assert(err.message);
+      assert(err.message === 'expected the first argument to be an array');
+      cb();
+    }
+  });
+
+  it('should throw an error if a string is passed:', function (cb) {
+    try {
+      last('foo');
+      cb(new Error('expected an error'));
+    } catch (err) {
+      assert(err);
+      assert(err.message);
+      assert(err.message === 'expected the first argument to be an array');
+      cb();
+    }
+  });
+
+  it('should throw an error if a non-array is passed:', function (cb) {
+    try {
+      last({ foo: 'bar' });
       cb(new Error('expected an error'));
     } catch (err) {
       assert(err);
@@ -31,6 +55,11 @@ describe('last', function() {
 
   it('should the last n elements of the array:', function() {
     assert.deepEqual(last(['a', 'b', 'c', 'd', 'e', 'f'], 3), ['d', 'e', 'f']);
+  });
+
+  it('should return null if the array has no elements', function() {
+    assert.strictEqual(last([]), null);
+    assert.strictEqual(last([], 3), null);
   });
 });
 
