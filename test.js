@@ -12,7 +12,7 @@ var assert = require('assert');
 var last = require('./');
 
 describe('last', function() {
-  it('should throw an error if no are passed:', function(cb) {
+  it('should throw an error if no values are passed:', function(cb) {
     try {
       last();
       cb(new Error('expected an error'));
