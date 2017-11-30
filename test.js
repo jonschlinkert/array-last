@@ -1,8 +1,8 @@
 /*!
  * array-last <https://github.com/jonschlinkert/array-last>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
- * Licensed under the MIT License
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 'use strict';
@@ -12,40 +12,18 @@ var assert = require('assert');
 var last = require('./');
 
 describe('last', function() {
-  it('should throw an error if no values are passed:', function(cb) {
-    try {
+  it('should throw an error if invalid arguments are passed', function() {
+    assert.throws(function() {
       last();
-      cb(new Error('expected an error'));
-    } catch (err) {
-      assert(err);
-      assert(err.message);
-      assert(err.message === 'expected the first argument to be an array');
-      cb();
-    }
-  });
+    }, /expected/i);
 
-  it('should throw an error if a string is passed:', function (cb) {
-    try {
+    assert.throws(function() {
       last('foo');
-      cb(new Error('expected an error'));
-    } catch (err) {
-      assert(err);
-      assert(err.message);
-      assert(err.message === 'expected the first argument to be an array');
-      cb();
-    }
-  });
+    }, /expected/i);
 
-  it('should throw an error if a non-array is passed:', function (cb) {
-    try {
+    assert.throws(function() {
       last({ foo: 'bar' });
-      cb(new Error('expected an error'));
-    } catch (err) {
-      assert(err);
-      assert(err.message);
-      assert(err.message === 'expected the first argument to be an array');
-      cb();
-    }
+    }, /expected/i);
   });
 
   it('should return the last element in the array:', function() {
@@ -62,4 +40,3 @@ describe('last', function() {
     assert.strictEqual(last([], 3), null);
   });
 });
-
