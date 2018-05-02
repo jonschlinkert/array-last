@@ -21,6 +21,8 @@ module.exports = function last(arr, n) {
   if (n === 1) {
     return arr[len - 1];
   }
+  
+  n = Math.min(n, len)
 
   var res = new Array(n);
   while (n--) {
