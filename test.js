@@ -33,6 +33,7 @@ describe('last', function() {
 
   it('should the last n elements of the array:', function() {
     assert.deepEqual(last(['a', 'b', 'c', 'd', 'e', 'f'], 3), ['d', 'e', 'f']);
+    assert.deepEqual(last(['a', 'b', 'c', 'd', 'e', 'f'], 9), ['a', 'b', 'c', 'd', 'e', 'f']);
   });
 
   it('should return null if the array has no elements', function() {
