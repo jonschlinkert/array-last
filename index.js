@@ -5,26 +5,22 @@
  * Released under the MIT License.
  */
 
-var isNumber = require('is-number');
-
-module.exports = function last(arr, n) {
+module.exports = function (arr, n) {
   if (!Array.isArray(arr)) {
     throw new Error('expected the first argument to be an array');
   }
 
   var len = arr.length;
-  if (len === 0) {
-    return null;
-  }
+  if (len === 0) return null;
 
-  n = isNumber(n) ? +n : 1;
-  if (n === 1) {
-    return arr[len - 1];
-  }
+  n = n && parseInt(n, 10) || 1;
+
+  if (n === 1) return arr[len - 1];
+  if (n >= len) return arr;
 
   var res = new Array(n);
   while (n--) {
     res[n] = arr[--len];
   }
   return res;
-};
+}

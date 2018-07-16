@@ -25,9 +25,6 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {
-    "is-number": "^4.0.0"
-  },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
     "array-slice": "^1.0.0",
