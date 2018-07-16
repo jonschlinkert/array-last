@@ -16,6 +16,7 @@ module.exports = function (arr, n) {
   n = n && parseInt(n, 10) || 1;
 
   if (n === 1) return arr[len - 1];
+  if (n >= len) return arr;
 
   var res = new Array(n);
   while (n--) {
