@@ -21,6 +21,10 @@ module.exports = function last(arr, n) {
   if (n === 1) {
     return arr[len - 1];
   }
+  
+  if (n >= len){
+    return arr;
+  }
 
   var res = new Array(n);
   while (n--) {
