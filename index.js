@@ -22,6 +22,7 @@ module.exports = function last(arr, n) {
     return arr[len - 1];
   }
 
+  n = Math.max(0, n);
   var res = new Array(n);
   while (n--) {
     res[n] = arr[--len];

@@ -39,4 +39,8 @@ describe('last', function() {
     assert.strictEqual(last([]), null);
     assert.strictEqual(last([], 3), null);
   });
+
+  it('should return empty array if the n a negative number', function() {
+    assert.deepEqual(last([1, 2, 3], -1), []);
+  });
 });
