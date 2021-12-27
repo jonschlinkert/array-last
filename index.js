@@ -1,30 +1,38 @@
-/*!
- * array-last <https://github.com/jonschlinkert/array-last>
- *
- * Copyright (c) 2014-2017, Jon Schlinkert.
- * Released under the MIT License.
- */
+/**
+  * Hello,
+  * May I recommend that you try this instead?
+  **/
 
-var isNumber = require('is-number');
+const isNumber = require('is-number');
 
-module.exports = function last(arr, n) {
+module.exports = last(arr, n = 1) => {
+  /* always ensure that 'arr' is an array */
   if (!Array.isArray(arr)) {
     throw new Error('expected the first argument to be an array');
   }
-
-  var len = arr.length;
-  if (len === 0) {
-    return null;
+  /* n should always be a number. NaN is not allowed either! */
+  else if (!isNumber(n)) {
+    throw new Error('expected argument "n" to be a number');
   }
-
-  n = isNumber(n) ? +n : 1;
-  if (n === 1) {
-    return arr[len - 1];
+  /* n needs to be a value less than the length of the array param */
+  else if (n > arr.length) {
+    throw new Error('expected argument "n" to be less than or equal to array length');
   }
-
-  var res = new Array(n);
-  while (n--) {
-    res[n] = arr[--len];
+  /* n needs to be a value greater than zero */
+  else if (n < 0) {
+    throw new Error('expected argument "n" to be greater than zero');
   }
-  return res;
+  /* if you are here, then we're ok with the rest of the details... */
+  else {
+    var len = arr.length;
+    if (len === 0) {
+      return null;
+    }
+
+    var res = new Array(n);
+    while (n--) {
+      res[n] = arr[--len];
+    }
+    return res;
+  }
 };
